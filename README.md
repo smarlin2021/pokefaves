@@ -1,2 +1,3 @@
 # pokefaves
-Favoriting cards and saving them to a wishlist to share with friends has never been easier. 
+
+Favoriting cards and saving them to a wishlist to share with friends has never been easier.
