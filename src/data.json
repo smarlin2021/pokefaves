@@ -40,5 +40,47 @@
 		"name": "PikachuTwo",
 		"image": "https://assets.tcgdex.net/en/xy/xyp/XY95",
 		"link": "https://assets.tcgdex.net/en/base/basep/1"
+	},
+	{
+		"id": "basep-1",
+		"localId": "7",
+		"name": "Pikachu",
+		"image": "https://assets.tcgdex.net/en/base/basep/1",
+		"link": "https://assets.tcgdex.net/en/base/basep/1"
+	},
+	{
+		"id": "xyp-XY95",
+		"localId": "8",
+		"name": "PikachuTwo",
+		"image": "https://assets.tcgdex.net/en/xy/xyp/XY95",
+		"link": "https://assets.tcgdex.net/en/base/basep/1"
+	},
+	{
+		"id": "basep-1",
+		"localId": "9",
+		"name": "Pikachu",
+		"image": "https://assets.tcgdex.net/en/base/basep/1",
+		"link": "https://assets.tcgdex.net/en/base/basep/1"
+	},
+	{
+		"id": "xyp-XY95",
+		"localId": "10",
+		"name": "PikachuTwo",
+		"image": "https://assets.tcgdex.net/en/xy/xyp/XY95",
+		"link": "https://assets.tcgdex.net/en/base/basep/1"
+	},
+	{
+		"id": "basep-1",
+		"localId": "11",
+		"name": "Pikachu",
+		"image": "https://assets.tcgdex.net/en/base/basep/1",
+		"link": "https://assets.tcgdex.net/en/base/basep/1"
+	},
+	{
+		"id": "xyp-XY95",
+		"localId": "12",
+		"name": "PikachuTwo",
+		"image": "https://assets.tcgdex.net/en/xy/xyp/XY95",
+		"link": "https://assets.tcgdex.net/en/base/basep/1"
 	}
 ]
