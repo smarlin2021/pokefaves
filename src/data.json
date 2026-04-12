@@ -1,4 +1,4 @@
-[
+{ "cards": [
 	{
 		"id": "basep-1",
 		"localId": "1",
@@ -14,73 +14,73 @@
 		"link": "https://assets.tcgdex.net/en/base/basep/1"
 	},
 	{
-		"id": "basep-1",
+		"id": "basep-2",
 		"localId": "3",
-		"name": "Pikachu",
+		"name": "Mew",
 		"image": "https://assets.tcgdex.net/en/base/basep/1",
 		"link": "https://assets.tcgdex.net/en/base/basep/1"
 	},
 	{
-		"id": "xyp-XY95",
+		"id": "xyp-XY956",
 		"localId": "4",
-		"name": "PikachuTwo",
+		"name": "MewTwo",
 		"image": "https://assets.tcgdex.net/en/xy/xyp/XY95",
 		"link": "https://assets.tcgdex.net/en/base/basep/1"
 	},
 	{
-		"id": "basep-1",
+		"id": "basep-18",
 		"localId": "5",
-		"name": "Pikachu",
+		"name": "Dialga",
 		"image": "https://assets.tcgdex.net/en/base/basep/1",
 		"link": "https://assets.tcgdex.net/en/base/basep/1"
 	},
 	{
-		"id": "xyp-XY95",
+		"id": "xyp-XY950",
 		"localId": "6",
-		"name": "PikachuTwo",
+		"name": "Bulbasuar",
 		"image": "https://assets.tcgdex.net/en/xy/xyp/XY95",
 		"link": "https://assets.tcgdex.net/en/base/basep/1"
 	},
 	{
-		"id": "basep-1",
+		"id": "basep-10",
 		"localId": "7",
-		"name": "Pikachu",
+		"name": "Squirtle",
 		"image": "https://assets.tcgdex.net/en/base/basep/1",
 		"link": "https://assets.tcgdex.net/en/base/basep/1"
 	},
 	{
-		"id": "xyp-XY95",
+		"id": "xyp-XY9577",
 		"localId": "8",
-		"name": "PikachuTwo",
+		"name": "Mimikyu",
 		"image": "https://assets.tcgdex.net/en/xy/xyp/XY95",
 		"link": "https://assets.tcgdex.net/en/base/basep/1"
 	},
 	{
-		"id": "basep-1",
+		"id": "basep-187",
 		"localId": "9",
-		"name": "Pikachu",
+		"name": "Charmander",
 		"image": "https://assets.tcgdex.net/en/base/basep/1",
 		"link": "https://assets.tcgdex.net/en/base/basep/1"
 	},
 	{
-		"id": "xyp-XY95",
+		"id": "xyp-XY9",
 		"localId": "10",
-		"name": "PikachuTwo",
+		"name": "Shinx",
 		"image": "https://assets.tcgdex.net/en/xy/xyp/XY95",
 		"link": "https://assets.tcgdex.net/en/base/basep/1"
 	},
 	{
-		"id": "basep-1",
+		"id": "basep-190",
 		"localId": "11",
-		"name": "Pikachu",
+		"name": "Piplup",
 		"image": "https://assets.tcgdex.net/en/base/basep/1",
 		"link": "https://assets.tcgdex.net/en/base/basep/1"
 	},
 	{
-		"id": "xyp-XY95",
+		"id": "xyp-XY9567",
 		"localId": "12",
-		"name": "PikachuTwo",
+		"name": "Ivysaur",
 		"image": "https://assets.tcgdex.net/en/xy/xyp/XY95",
 		"link": "https://assets.tcgdex.net/en/base/basep/1"
 	}
-]
+]}
