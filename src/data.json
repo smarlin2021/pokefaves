@@ -58,7 +58,7 @@
 	{
 		"id": "basep-187",
 		"localId": "9",
-		"name": "Charmander",
+		"name": "MewThree",
 		"image": "https://assets.tcgdex.net/en/base/basep/1",
 		"link": "https://assets.tcgdex.net/en/base/basep/1"
 	},
@@ -80,6 +80,34 @@
 		"id": "xyp-XY9567",
 		"localId": "12",
 		"name": "Ivysaur",
+		"image": "https://assets.tcgdex.net/en/xy/xyp/XY95",
+		"link": "https://assets.tcgdex.net/en/base/basep/1"
+	},
+	{
+		"id": "basep-191",
+		"localId": "13",
+		"name": "Turtwig",
+		"image": "https://assets.tcgdex.net/en/base/basep/1",
+		"link": "https://assets.tcgdex.net/en/base/basep/1"
+	},
+	{
+		"id": "xyp-XY95678",
+		"localId": "14",
+		"name": "Charizard",
+		"image": "https://assets.tcgdex.net/en/xy/xyp/XY95",
+		"link": "https://assets.tcgdex.net/en/base/basep/1"
+	},
+	{
+		"id": "basep-192",
+		"localId": "15",
+		"name": "Chimchar",
+		"image": "https://assets.tcgdex.net/en/base/basep/1",
+		"link": "https://assets.tcgdex.net/en/base/basep/1"
+	},
+	{
+		"id": "xyp-XY956789",
+		"localId": "16",
+		"name": "SquirtleTwo",
 		"image": "https://assets.tcgdex.net/en/xy/xyp/XY95",
 		"link": "https://assets.tcgdex.net/en/base/basep/1"
 	}

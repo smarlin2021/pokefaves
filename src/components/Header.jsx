@@ -44,7 +44,7 @@ function Header() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{ backgroundColor: "#000000" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography

@@ -23,7 +23,7 @@ export default function FavoriteCard({ id, name, image, localId, link }) {
   };
 
   return (
-    <Card sx={{ maxWidth: 350, backgroundColor: "rgb(223, 204, 204)" }}>
+    <Card sx={{ maxWidth: 500, backgroundColor: "#9e9e9e" }}>
       <CardHeader title={name} />
       <CardMedia component="img" height="294" image={image} />
       <CardContent>
