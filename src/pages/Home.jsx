@@ -6,7 +6,7 @@ import { useState } from "react";
 
 function Home() {
   const [currentPage, setCurrentPage] = useState(1);
-  const dataPerPage = 6;
+  const dataPerPage = 10;
 
   const indexOfLastCard = currentPage * dataPerPage;
   const indexOfFirstCard = indexOfLastCard - dataPerPage;

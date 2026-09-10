@@ -12,11 +12,15 @@ import {
   Tooltip,
   MenuItem,
 } from "@mui/material";
+import HomeIcon from "@mui/icons-material/Home";
+import SearchIcon from "@mui/icons-material/Search";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import ProfileIcon from "@mui/icons-material/AccountCircle";
 
 const pages = [
-  { name: "Home", link: "/" },
-  { name: "Search", link: "/search" },
-  { name: "Saved Cards", link: "/saved-cards" },
+  { name: "Home", link: "/", icon: <HomeIcon /> },
+  { name: "Search", link: "/search", icon: <SearchIcon /> },
+  { name: "Saved Cards", link: "/saved-cards", icon: <FavoriteIcon /> },
 ];
 const settings = [
   { name: "Profile", link: "/profile" },
@@ -44,25 +48,64 @@ function Header() {
   };
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: "#000000" }}>
-      <Container maxWidth="xl">
+    <AppBar
+      position="static"
+      sx={{
+        backgroundColor: "#d158b7",
+      }}
+    >
+      <Container
+        sx={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "stretch",
+          margin: 0,
+          padding: 0,
+        }}
+      >
         <Toolbar disableGutters>
-          <Typography
-            variant="h6"
-            noWrap
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            PokeFaves
-          </Typography>
-
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+            {pages.map((page) => (
+              <div
+                style={{
+                  borderRadius: "50%",
+                  backgroundColor: "#58d1bf",
+                  marginRight: "1rem",
+                  paddingTop: "0.25rem",
+                  width: "3rem",
+                  height: "2.75rem",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <Button
+                  key={page.name}
+                  onClick={() => (window.location.href = page.link)}
+                  sx={{ my: 2, color: "white", display: "block" }}
+                >
+                  {page.icon}
+                </Button>
+              </div>
+            ))}
+          </Box>
+          <Box>
+            <Typography
+              variant="h6"
+              noWrap
+              sx={{
+                mr: 2,
+                display: { xs: "none", md: "flex" },
+                fontFamily: "'Bitcount Prop Double Ink', sans-serif",
+                fontWeight: 700,
+                letterSpacing: ".3rem",
+                color: "inherit",
+                textDecoration: "none",
+              }}
+            >
+              Jirachi's Wishlist
+            </Typography>
+          </Box>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -70,7 +113,6 @@ function Header() {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
             ></IconButton>
             <Menu
               id="menu-appbar"
@@ -101,23 +143,24 @@ function Header() {
             </Menu>
           </Box>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Button
-                key={page.name}
-                onClick={() => (window.location.href = page.link)}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                {page.name}
-              </Button>
-            ))}
-          </Box>
           <Box
-            sx={{ flexGrow: 0, display: "flex", alignItems: "center", gap: 2 }}
+            sx={{
+              flexGrow: 0,
+              display: "flex",
+              alignItems: "center",
+              gap: 2,
+            }}
           >
             <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+              <IconButton
+                onClick={handleOpenUserMenu}
+                style={{ p: 0, backgroundColor: "#58d1bf" }}
+              >
+                <Avatar
+                  style={{ backgroundColor: "#58d1bf" }}
+                  alt="Remy Sharp"
+                  icon="ProfileIcon"
+                />
               </IconButton>
             </Tooltip>
             <Menu
@@ -148,6 +191,13 @@ function Header() {
               ))}
             </Menu>
           </Box>
+          <Button
+            key={"logout"}
+            onClick={() => (window.location.href = "/logout")}
+            sx={{ my: 2, color: "white", display: "block" }}
+          >
+            Logout
+          </Button>
         </Toolbar>
       </Container>
     </AppBar>

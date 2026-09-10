@@ -23,15 +23,33 @@ export default function FavoriteCard({ id, name, image, localId, link }) {
   };
 
   return (
-    <Card sx={{ maxWidth: 500, backgroundColor: "#9e9e9e" }}>
-      <CardHeader title={name} />
-      <CardMedia component="img" height="294" image={image} />
+    <Card sx={{ maxWidth: "20rem", backgroundColor: "#58d1bf" }}>
+      <CardMedia
+        component="img"
+        image={image ? `${image}/high.png` : "/placeholder.png"}
+        alt={name}
+      />
       <CardContent>
-        <Typography variant="body2" sx={{ color: "text.secondary" }}>
-          {id}
+        <Typography
+          variant="body1"
+          sx={{
+            color: "text.secondary",
+            fontFamily: "'Bitcount Prop Double Ink', sans-serif",
+            fontWeight: 700,
+            fontSize: "1.5rem",
+            letterSpacing: ".3rem",
+          }}
+        >
+          {name}
         </Typography>
       </CardContent>
-      <CardActions disableSpacing>
+      <CardActions
+        disableSpacing
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
         <IconButton onClick={() => toggleFavorite(localId)}>
           <FavoriteIcon color={isFavorited ? "error" : "grey"} />
         </IconButton>

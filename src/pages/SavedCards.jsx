@@ -5,15 +5,31 @@ import data from "../data.json";
 import { useState } from "react";
 
 import { useFavorites } from "../contexts/FavoritesContext";
+import tcgdex from "../TCGDex";
 
 function SavedCards() {
   const { favorites } = useFavorites();
   const [currentPage, setCurrentPage] = useState(1);
   const dataPerPage = 6;
+  useEffect(() => {
+    const fetchSavedCards = async () => {
+      try {
+        const results = await tcgdex.fetch("sets", "swsh3");
+        setCards(results.cards);
+      } catch (error) {
+        console.error("Error fetching saved cards:", error);
+      }
+    };
 
+    fetchSavedCards();
+  }, []);
   const savedCards = data.cards.filter((card) =>
     favorites.includes(card.localId),
   );
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
+
   const indexOfLastCard = currentPage * dataPerPage;
   const indexOfFirstCard = indexOfLastCard - dataPerPage;
   const currentCards = savedCards.slice(indexOfFirstCard, indexOfLastCard);
