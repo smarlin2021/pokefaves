@@ -29,7 +29,7 @@ const pages = [
 const settings = [
   { name: "Profile", link: "/pokefaves/profile" },
   { name: "My List", link: "/pokefaves/my-list" },
-  { name: "Logout", link: "/logout" },
+  { name: "Logout", link: "/pokefaves/logout" },
 ];
 
 function Header() {
