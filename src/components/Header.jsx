@@ -27,12 +27,6 @@ const pages = [
   },
 ];
 
-const settings = [
-  { name: "Profile", link: "/profile" },
-  { name: "My List", link: "/my-list" },
-  { name: "Logout", link: "/logout" },
-];
-
 function Header() {
   const navigate = useNavigate();
 
@@ -183,53 +177,22 @@ function Header() {
               gap: 1.5,
             }}
           >
-            <Tooltip title="Open settings">
-              <IconButton
-                onClick={handleOpenUserMenu}
-                sx={{
-                  p: 0,
-                  backgroundColor: "#58d1bf",
-                  "&:hover": {
-                    backgroundColor: "#45bfae",
-                  },
-                }}
-              >
-                <Avatar
-                  sx={{
-                    backgroundColor: "#58d1bf",
-                  }}
-                />
-              </IconButton>
-            </Tooltip>
-
-            <Menu
-              sx={{ mt: "45px" }}
-              id="user-menu"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
+            <IconButton
+              onClick={() => navigate("/profile")}
+              sx={{
+                p: 0,
+                backgroundColor: "#58d1bf",
+                "&:hover": {
+                  backgroundColor: "#45bfae",
+                },
               }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem
-                  key={setting.name}
-                  onClick={() => {
-                    navigate(setting.link);
-                    handleCloseUserMenu();
-                  }}
-                >
-                  <Typography>{setting.name}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
+              <Avatar
+                sx={{
+                  backgroundColor: "#58d1bf",
+                }}
+              />
+            </IconButton>
 
             <Button
               onClick={() => navigate("/logout")}
