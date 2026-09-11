@@ -16,7 +16,6 @@ import {
 import HomeIcon from "@mui/icons-material/Home";
 import SearchIcon from "@mui/icons-material/Search";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import ProfileIcon from "@mui/icons-material/AccountCircle";
 
 const pages = [
   { name: "Home", link: "/", icon: <HomeIcon /> },
@@ -27,6 +26,7 @@ const pages = [
     icon: <FavoriteIcon />,
   },
 ];
+
 const settings = [
   { name: "Profile", link: "/profile" },
   { name: "My List", link: "/my-list" },
@@ -35,12 +35,14 @@ const settings = [
 
 function Header() {
   const navigate = useNavigate();
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
+
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
@@ -59,29 +61,34 @@ function Header() {
       sx={{
         backgroundColor: "#d158b7",
         boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
-        display: "flex",
-        justifyContent: "stretch",
-        alignItems: "center",
       }}
     >
-      <Container
-        sx={{
-          width: "100%",
-          display: "flex",
-          justifyContent: "stretch",
-          margin: 0,
-          padding: 0,
-        }}
-      >
-        <Toolbar disableGutters>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+      <Container maxWidth={false} disableGutters sx={{ width: "100%" }}>
+        <Toolbar
+          disableGutters
+          sx={{
+            minHeight: "80px",
+            px: 2,
+            position: "relative",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          {/* LEFT SIDE */}
+          <Box
+            sx={{
+              display: { xs: "none", md: "flex" },
+              alignItems: "center",
+              gap: 1.5,
+            }}
+          >
             {pages.map((page) => (
-              <div
-                style={{
+              <Box
+                key={page.name}
+                sx={{
                   borderRadius: "50%",
                   backgroundColor: "#58d1bf",
-                  marginRight: "1rem",
-                  paddingTop: "0.25rem",
                   width: "3rem",
                   height: "2.75rem",
                   display: "flex",
@@ -90,42 +97,38 @@ function Header() {
                 }}
               >
                 <Button
-                  key={page.name}
                   component={Link}
                   to={page.link}
                   onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: "white", display: "block" }}
+                  sx={{
+                    minWidth: 0,
+                    color: "white",
+                    p: 1,
+                  }}
                 >
                   {page.icon}
                 </Button>
-              </div>
+              </Box>
             ))}
           </Box>
-          <div>
-            <Typography
-              variant="h6"
-              noWrap
-              sx={{
-                mr: 2,
-                display: { xs: "none", md: "flex" },
-                fontFamily: "'Bitcount Prop Double Ink', sans-serif",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none",
-              }}
-            >
-              Jirachi's Wishlist
-            </Typography>
-          </div>
-          <div sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+
+          {/* MOBILE MENU */}
+          <Box
+            sx={{
+              display: { xs: "flex", md: "none" },
+            }}
+          >
             <IconButton
               size="large"
-              aria-label="account of current user"
+              color="inherit"
+              aria-label="navigation menu"
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-            ></IconButton>
+            >
+              <HomeIcon />
+            </IconButton>
+
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
@@ -140,43 +143,71 @@ function Header() {
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              sx={{ display: { xs: "block", md: "none" } }}
             >
               {pages.map((page) => (
                 <MenuItem
-                  key={page.localId}
-                  onClick={() => navigate(page.link)}
+                  key={page.name}
+                  onClick={() => {
+                    navigate(page.link);
+                    handleCloseNavMenu();
+                  }}
                 >
-                  <Typography sx={{ textAlign: "center" }}>
-                    {page.name}
-                  </Typography>
+                  <Typography>{page.name}</Typography>
                 </MenuItem>
               ))}
             </Menu>
-          </div>
-          <div
+          </Box>
+
+          {/* CENTER TITLE */}
+          <Typography
+            variant="h6"
+            noWrap
             sx={{
-              flexGrow: 0,
-              display: "flex",
+              position: "absolute",
+              left: "50%",
+              transform: "translateX(-50%)",
+              fontFamily: "'Bitcount Prop Double Ink', sans-serif",
+              fontWeight: 700,
+              letterSpacing: ".3rem",
+              color: "white",
+              textDecoration: "none",
+              display: { xs: "none", md: "block" },
+            }}
+          >
+            Jirachi's Wishlist
+          </Typography>
+
+          {/* RIGHT SIDE */}
+          <Box
+            sx={{
+              ml: "auto",
+              display: { xs: "none", md: "flex" },
               alignItems: "center",
-              gap: 2,
+              gap: 1.5,
             }}
           >
             <Tooltip title="Open settings">
               <IconButton
                 onClick={handleOpenUserMenu}
-                style={{ p: 0, backgroundColor: "#58d1bf" }}
+                sx={{
+                  p: 0,
+                  backgroundColor: "#58d1bf",
+                  "&:hover": {
+                    backgroundColor: "#45bfae",
+                  },
+                }}
               >
                 <Avatar
-                  style={{ backgroundColor: "#58d1bf" }}
-                  alt="Remy Sharp"
-                  icon="ProfileIcon"
+                  sx={{
+                    backgroundColor: "#58d1bf",
+                  }}
                 />
               </IconButton>
             </Tooltip>
+
             <Menu
               sx={{ mt: "45px" }}
-              id="menu-appbar"
+              id="user-menu"
               anchorEl={anchorElUser}
               anchorOrigin={{
                 vertical: "top",
@@ -193,25 +224,29 @@ function Header() {
               {settings.map((setting) => (
                 <MenuItem
                   key={setting.name}
-                  onClick={() => navigate(setting.link)}
+                  onClick={() => {
+                    navigate(setting.link);
+                    handleCloseUserMenu();
+                  }}
                 >
-                  <Typography sx={{ textAlign: "center" }}>
-                    {setting.name}
-                  </Typography>
+                  <Typography>{setting.name}</Typography>
                 </MenuItem>
               ))}
             </Menu>
-          </div>
-          <Button
-            key={"logout"}
-            onClick={() => navigate("/logout")}
-            sx={{ my: 2, color: "white", display: "block" }}
-          >
-            Logout
-          </Button>
+
+            <Button
+              onClick={() => navigate("/logout")}
+              sx={{
+                color: "white",
+              }}
+            >
+              Logout
+            </Button>
+          </Box>
         </Toolbar>
       </Container>
     </AppBar>
   );
 }
+
 export default Header;
