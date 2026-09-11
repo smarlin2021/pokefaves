@@ -18,7 +18,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import ProfileIcon from "@mui/icons-material/AccountCircle";
 
 const pages = [
-  { name: "Home", link: "/pokefaves", icon: <HomeIcon /> },
+  { name: "Home", link: "/pokefaves/", icon: <HomeIcon /> },
   { name: "Search", link: "/pokefaves/search", icon: <SearchIcon /> },
   {
     name: "Saved Cards",
