@@ -181,7 +181,7 @@ const SearchPage = () => {
             >
               Your Wishlist
             </Button>
-            <Button
+            {/* <Button
               variant="contained"
               sx={{
                 width: "100%",
@@ -200,7 +200,7 @@ const SearchPage = () => {
               }}
             >
               Most Wanted
-            </Button>
+            </Button> */}
             <Button
               variant="contained"
               onClick={handleMostPopular}
@@ -229,7 +229,7 @@ const SearchPage = () => {
               Most Popular
             </Button>
           </Box>
-          <Box
+          {/* <Box
             component="img"
             src="/your-wishlist-image.png"
             alt="Wishlist"
@@ -239,7 +239,7 @@ const SearchPage = () => {
               marginTop: "2rem",
               objectFit: "contain",
             }}
-          />
+          /> */}
         </Box>
         <Box
           sx={{
