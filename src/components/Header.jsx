@@ -18,18 +18,18 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import ProfileIcon from "@mui/icons-material/AccountCircle";
 
 const pages = [
-  { name: "Home", link: "/pokefaves/", icon: <HomeIcon /> },
-  { name: "Search", link: "/pokefaves/search", icon: <SearchIcon /> },
+  { name: "Home", link: "/", icon: <HomeIcon /> },
+  { name: "Search", link: "/search", icon: <SearchIcon /> },
   {
     name: "Saved Cards",
-    link: "/pokefaves/saved-cards",
+    link: "/saved-cards",
     icon: <FavoriteIcon />,
   },
 ];
 const settings = [
-  { name: "Profile", link: "/pokefaves/profile" },
-  { name: "My List", link: "/pokefaves/my-list" },
-  { name: "Logout", link: "/pokefaves/logout" },
+  { name: "Profile", link: "/profile" },
+  { name: "My List", link: "/my-list" },
+  { name: "Logout", link: "/logout" },
 ];
 
 function Header() {
