@@ -75,7 +75,6 @@ function Header() {
             justifyContent: "space-between",
           }}
         >
-          {/* LEFT SIDE */}
           <Box
             sx={{
               display: { xs: "none", md: "flex" },
@@ -112,7 +111,6 @@ function Header() {
             ))}
           </Box>
 
-          {/* MOBILE MENU */}
           <Box
             sx={{
               display: { xs: "flex", md: "none" },
@@ -158,7 +156,6 @@ function Header() {
             </Menu>
           </Box>
 
-          {/* CENTER TITLE */}
           <Typography
             variant="h6"
             noWrap
