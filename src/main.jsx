@@ -15,10 +15,10 @@ createRoot(document.getElementById("root")).render(
       <Header />
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/search" element={<SearchPage />} />
-          <Route path="/saved-cards" element={<SavedCards />} />
-          <Route path="/logout" element={<Logout />} />
+          <Route path="/pokefaves" element={<Home />} />
+          <Route path="/pokefaves/search" element={<SearchPage />} />
+          <Route path="/pokefaves/saved-cards" element={<SavedCards />} />
+          <Route path="/pokefaves/logout" element={<Logout />} />
         </Routes>
       </Router>
     </FavoritesProvider>
