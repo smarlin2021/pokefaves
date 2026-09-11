@@ -5,7 +5,7 @@ import Home from "./pages/Home.jsx";
 import Header from "./components/Header.jsx";
 import SearchPage from "./pages/SearchPage.jsx";
 import Logout from "./pages/Logout.jsx";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import SavedCards from "./pages/SavedCards.jsx";
 import { FavoritesProvider } from "./contexts/FavoritesContext.jsx";
 
@@ -13,7 +13,7 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <FavoritesProvider>
       <Header />
-      <Router basename="/pokefaves">
+      <Router>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<SearchPage />} />
