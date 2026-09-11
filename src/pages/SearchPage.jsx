@@ -1,6 +1,12 @@
 import React, { useCallback, useEffect, useState } from "react";
 import FavoriteCard from "../components/FavoriteCard";
-import { CircularProgress, Grid, TextField, Typography } from "@mui/material";
+import {
+  Button,
+  CircularProgress,
+  Grid,
+  TextField,
+  Typography,
+} from "@mui/material";
 import Paginate from "../components/Paginate";
 import tcgdex from "../TCGDex";
 
@@ -75,32 +81,60 @@ const SearchPage = () => {
 
       {!loading && !error && (
         <>
-          <Grid
-            container
-            display="flex"
-            spacing={{ xs: 3, md: 3, lg: 3, xl: 3 }}
-            columns={{ xs: 1, sm: 1, md: 2, lg: 3, xl: 3 }}
-            margin="1rem"
+          <div
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+            }}
           >
-            {currentCards.filter(Boolean).map((card) => (
-              <Grid size={{ xs: 1, sm: 1, md: 1, lg: 1, xl: 1 }}>
-                <FavoriteCard
-                  key={card.localId}
-                  name={card.name}
-                  id={card.id}
-                  localId={card.localId}
-                  image={card.image}
-                  link={card.link}
-                />
-              </Grid>
-            ))}
-          </Grid>
-          <br />
-          <Paginate
-            postsPerPage={dataPerPage}
-            totalPosts={currentCards.length}
-            paginate={paginate}
-          />
+            <div sx={{ display: "flex", flexDirection: "column" }}>
+              <Button
+                variant="contained"
+                sx={{ margin: "1rem", backgroundColor: "#d158b7" }}
+              >
+                Your Wishlist
+              </Button>
+              <Button
+                variant="contained"
+                sx={{ margin: "1rem", backgroundColor: "#d158b7" }}
+              >
+                Most Wanted
+              </Button>
+              <Button
+                variant="contained"
+                sx={{ margin: "1rem", backgroundColor: "#d158b7" }}
+              >
+                Most Popular
+              </Button>
+            </div>
+            <Grid
+              container
+              display="flex"
+              spacing={{ xs: 3, md: 3, lg: 3, xl: 3 }}
+              columns={{ xs: 1, sm: 1, md: 2, lg: 3, xl: 3 }}
+              margin="1rem"
+            >
+              {currentCards.filter(Boolean).map((card) => (
+                <Grid size={{ xs: 1, sm: 1, md: 1, lg: 1, xl: 1 }}>
+                  <FavoriteCard
+                    key={card.localId}
+                    name={card.name}
+                    id={card.id}
+                    localId={card.localId}
+                    image={card.image}
+                    link={card.link}
+                  />
+                </Grid>
+              ))}
+            </Grid>
+            <br />
+            <Paginate
+              postsPerPage={dataPerPage}
+              totalPosts={currentCards.length}
+              paginate={paginate}
+            />
+          </div>
         </>
       )}
     </div>

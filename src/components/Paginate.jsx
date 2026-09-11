@@ -7,7 +7,14 @@ const Paginate = ({ postsPerPage, totalPosts, paginate }) => {
   }
   return (
     <nav>
-      <Box>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          marginBottom: "2rem",
+          fontFamily: "'Bitcount Prop Double Ink', sans-serif",
+        }}
+      >
         <Pagination
           count={pageNumber.length}
           onChange={(e, p) => paginate(p)}

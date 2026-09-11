@@ -52,6 +52,10 @@ function Header() {
       position="static"
       sx={{
         backgroundColor: "#d158b7",
+        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
+        display: "flex",
+        justifyContent: "stretch",
+        alignItems: "center",
       }}
     >
       <Container
@@ -89,7 +93,7 @@ function Header() {
               </div>
             ))}
           </Box>
-          <Box>
+          <div>
             <Typography
               variant="h6"
               noWrap
@@ -105,8 +109,8 @@ function Header() {
             >
               Jirachi's Wishlist
             </Typography>
-          </Box>
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          </div>
+          <div sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -141,9 +145,8 @@ function Header() {
                 </MenuItem>
               ))}
             </Menu>
-          </Box>
-
-          <Box
+          </div>
+          <div
             sx={{
               flexGrow: 0,
               display: "flex",
@@ -190,7 +193,7 @@ function Header() {
                 </MenuItem>
               ))}
             </Menu>
-          </Box>
+          </div>
           <Button
             key={"logout"}
             onClick={() => (window.location.href = "/logout")}
