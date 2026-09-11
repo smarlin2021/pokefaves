@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useNavigate, Link } from "react-router-dom";
 import {
   AppBar,
   Box,
@@ -33,6 +34,7 @@ const settings = [
 ];
 
 function Header() {
+  const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -89,7 +91,9 @@ function Header() {
               >
                 <Button
                   key={page.name}
-                  onClick={() => (window.location.href = page.link)}
+                  component={Link}
+                  to={page.link}
+                  onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: "white", display: "block" }}
                 >
                   {page.icon}
@@ -141,7 +145,7 @@ function Header() {
               {pages.map((page) => (
                 <MenuItem
                   key={page.localId}
-                  onClick={() => (window.location.href = page.link)}
+                  onClick={() => navigate(page.link)}
                 >
                   <Typography sx={{ textAlign: "center" }}>
                     {page.name}
@@ -189,7 +193,7 @@ function Header() {
               {settings.map((setting) => (
                 <MenuItem
                   key={setting.name}
-                  onClick={() => (window.location.href = setting.link)}
+                  onClick={() => navigate(setting.link)}
                 >
                   <Typography sx={{ textAlign: "center" }}>
                     {setting.name}
@@ -200,7 +204,7 @@ function Header() {
           </div>
           <Button
             key={"logout"}
-            onClick={() => (window.location.href = "/logout")}
+            onClick={() => navigate("/logout")}
             sx={{ my: 2, color: "white", display: "block" }}
           >
             Logout
