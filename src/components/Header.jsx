@@ -20,11 +20,11 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 const pages = [
   { name: "Home", link: "/", icon: <HomeIcon /> },
   { name: "Search", link: "/search", icon: <SearchIcon /> },
-  {
-    name: "Saved Cards",
-    link: "/saved-cards",
-    icon: <FavoriteIcon />,
-  },
+  // {
+  //   name: "Saved Cards",
+  //   link: "/saved-cards",
+  //   icon: <FavoriteIcon />,
+  // },
 ];
 
 function Header() {
